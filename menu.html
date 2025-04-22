@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Creator" content="co-authored by Deron Barker">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/d2.png" type="image/x-icon">
+    <title>D-Chops - Menu</title>
+    <style>
+        .close {
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 1.5em;
+            line-height: 1;
+            cursor: pointer;
+            color: grey;
+        }
+
+        .close:hover {
+            color: black;
+            /* Adjust hover color as needed */
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .search-container button.clear-search {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: grey;
+        }
+
+        .search-container button.clear-search:hover {
+            color: black;
+        }
+
+        .fancy-link {
+            font-size: 15px;
+            color: white;
+            background-color: yellowgreen;
+            /* Tomato color */
+            padding: 10px 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .fancy-link:hover {
+            background-color: #417cb8;
+            /* Darker shade of tomato */
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <h1 class="footHead" style="float: left;"><a href="resturant.html"><i>D-Chops <img src="img/axe.png"
+                                height="18px" alt="An Axe"></i></a></h1>
+
+                <ul>
+                    <li><a href="aboutus.html" title="About Us">About Us</a></li>
+                    <li><a href="reserve.html" title="Make a Reservation" class="schedule-button">Reservation</a></li>
+                    <li><a href="menu.html" title="Menu">Menu</a></li>
+                    <li><a href="resturant.html" title="Home Page">Home</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="content" style="color: black;">
+            <div class="search">
+                <div class="main-head">
+                    <h1 style="text-align: center; margin-right: 22px; text-transform: uppercase;"><strong>Menu</strong>
+                    </h1>
+                </div>
+                <div class="search-container">
+
+                    <input type="text" id="searchInput" oninput="filterMenu()" placeholder="Search...">
+                    <button class="clear-search" onclick="clearSearch()">&#x2715;</button>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <div class="menu-section" id="menuSection">
+                <div class="section-title">
+                    <h1><strong>Foods</strong></h1>
+                </div>
+                <button class="menu-item"
+                    onclick="openModal('Steak', 'A succulent grilled steak served with a side of mashed potatoes and seasonal vegetables.', 'img/food.jpg')">
+                    <img src="img/food.jpg" alt="Steak">
+                    <h2>Steak</h2>
+                    <p>Grilled to perfection.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Lamb', 'Tender lamb chops seasoned with Mediterranean spices, served with couscous and roasted vegetables.', 'img/food4.jpg')">
+                    <img src="img/food4.jpg" alt="Lamb">
+                    <h2>Lamb</h2>
+                    <p>Mediterranean delight.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Beef', 'Slow-cooked beef brisket with a rich barbecue sauce, accompanied by coleslaw and cornbread.', 'img/food5.jpg')">
+                    <img src="img/food5.jpg" alt="Beef">
+                    <h2>Beef</h2>
+                    <p>Rich and tender.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Pork', 'Juicy pork chops glazed with a sweet and tangy barbecue sauce, accompanied by roasted potatoes and steamed broccoli.', 'img/food3.jpg')">
+                    <img src="img/food3.jpg" alt="Pork">
+                    <h2>Pork</h2>
+                    <p>Sweet and tangy delight.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Turkey', 'Oven-roasted turkey breast served with cranberry sauce, stuffing, and green beans.', 'img/food6.jpg')">
+                    <img src="img/food6.jpg" alt="Turkey">
+                    <h2>Turkey</h2>
+                    <p>Traditional favorite.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Chicken', 'Tender chicken breast marinated in a savory blend of herbs and spices, served with rice and a fresh garden salad.', 'img/food2.jpg')">
+                    <img src="img/food2.jpg" alt="Chicken">
+                    <h2>Chicken</h2>
+                    <p>Marinated to perfection.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Pigtails', 'Tender pork ribs marinated in a savory blend of Mediterranean spices, served with couscous and roasted vegetables.', 'img/food7.jpg')">
+                    <img src="img/food7.jpg" alt="Pigtails">
+                    <h2>Pigtails</h2>
+                    <p>Savory Mediterranean ribs with couscous.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Ribs', 'Juicy pork ribs glazed with a tangy barbecue sauce, served with coleslaw and fries.', 'img/food8.jpg')">
+                    <img src="img/food8.jpg" alt="Ribs">
+                    <h2>Ribs</h2>
+                    <p>Tangy BBQ ribs with coleslaw and fries.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Duck', 'Succulent roasted duck with a crispy skin, served with a rich cherry sauce and seasonal vegetables.', 'img/food9.jpg')">
+                    <img src="img/food9.jpg" alt="Duck">
+                    <h2>Duck</h2>
+                    <p>Roasted duck with cherry sauce.</p>
+                </button>
+            </div>
+
+            <div class="menu-section" id="beveragesSection">
+                <div class="section-title">
+                    <h1><strong>Beverages</strong></h1>
+                </div>
+                <button class="menu-item"
+                    onclick="openModal('Soft Drinks', 'Refreshing ice-cold Soft Drinks.', 'img/drink5.jpg')">
+                    <img src="img/drink5.jpg" alt="Coke">
+                    <h2>Soft Drinks</h2>
+                    <p>Refreshing ice-cold Soft Drinks.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Cocktails', 'Quite refreshing cocktails', 'img/drink6.jpg')">
+                    <img src="img/drink6.jpg" alt="Lemonade">
+                    <h2>Cocktails</h2>
+                    <p>Refreshing Cocktails</p>
+                </button>
+                <button class="menu-item" onclick="openModal('Beer', 'Craft beer selection.', 'img/drink2.jpg')">
+                    <img src="img/drink2.jpg" alt="Beer">
+                    <h2>Beer</h2>
+                    <p>Craft beer selection.</p>
+                </button>
+                <button class="menu-item" onclick="openModal('Wine', 'Fine red and white wines.', 'img/drink3.jpg')">
+                    <img src="img/drink3.jpg" alt="Wine">
+                    <h2>Wine</h2>
+                    <p>Fine red and white wines.</p>
+                </button>
+                <button class="menu-item" onclick="openModal('Water', 'Still or sparkling water.', 'img/drink1.jpg')">
+                    <img src="img/drink1.jpg" alt="Water">
+                    <h2>Water</h2>
+                    <p>Still or sparkling.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Exquisite Elixirs', 'Freshly squeezed fruit juices.', 'img/drink4.jpg')">
+                    <img src="img/drink4.jpg" alt="Juice">
+                    <h2>Exquisite Elixirs</h2>
+                    <p>Freshly squeezed fruit juices.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Spirits', 'Selection of premium spirits including whiskey, vodka, rum, gin, tequila, and more.', 'img/drink7.jpg')">
+                    <img src="img/drink7.jpg" alt="Spirits">
+                    <h2>Spirits</h2>
+                    <p>Premium spirits on deck</p>
+                </button>
+            </div>
+            <div class="menu-section" id="kidsSection">
+                <div class="section-title">
+                    <h1><strong>Kids Menu</strong></h1>
+                </div>
+                <button class="menu-item"
+                    onclick="openModal('Chicken Nuggets', 'Crispy chicken nuggets served with fries and ketchup.', 'img/kids1.jpg')">
+                    <img src="img/kids1.jpg" alt="Chicken Nuggets">
+                    <h2>Chicken Nuggets</h2>
+                    <p>Crispy chicken nuggets.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Pasta', 'Kid-friendly pasta with tomato sauce and parmesan cheese.', 'img/kids2.jpg')">
+                    <img src="img/kids2.jpg" alt="Pasta">
+                    <h2>Pasta</h2>
+                    <p>Kid-friendly pasta.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Grilled Cheese Burger', 'Toasted burdger with melted cheese.', 'img/kids3.jpg')">
+                    <img src="img/kids3.jpg" alt="Grilled Cheese Burger">
+                    <h2>Cheese Burger</h2>
+                    <p>Burger with melted cheese and chips.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Hotdog', 'Toasted sandwich with melted cheese.', 'img/kids4.jpg')">
+                    <img src="img/kids4.jpg" alt="HotDog">
+                    <h2>HotDog</h2>
+                    <p>Toasted with melted cheese.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Chicken and Chips', 'Crispy fried chicken served with golden fries and a side of coleslaw.', 'img/kids5.jpg')">
+                    <img src="img/kids5.jpg" alt="Chicken and Chips">
+                    <h2>Chicken and Chips</h2>
+                    <p>Crispy fried chicken served with golden fries and coleslaw.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Pizza', 'Delicious pizza with a variety of toppings, served fresh from the oven.', 'img/kids6.jpg')">
+                    <img src="img/kids6.jpg" alt="Pizza">
+                    <h2>Pizza</h2>
+                    <p>Delicious pizza with a variety of toppings.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Chicken Tenders', 'Golden and crispy chicken tenders served with your choice of dipping sauce.', 'img/kids7.jpg')">
+                    <img src="img/kids7.jpg" alt="Chicken Tenders">
+                    <h2>Chicken Tenders</h2>
+                    <p>Golden and crispy chicken tenders served with your choice of dipping sauce.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Mac and Cheese', 'Creamy macaroni with melted cheese, baked to perfection.', 'img/kids8.jpg')">
+                    <img src="img/kids8.jpg" alt="Mac and Cheese">
+                    <h2>Mac and Cheese</h2>
+                    <p>Creamy macaroni with melted cheese, baked to perfection.</p>
+                </button>
+
+
+            </div>
+            <div class="menu-section" id="kidsSection">
+                <div class="section-title">
+                    <h1><strong>Juices</strong></h1>
+                </div>
+                <button class="menu-item"
+                    onclick="openModal('Box Juices', 'Refreshing juices made from fresh fruits, perfect for a healthy boost.', 'img/drinks1.jpg')">
+                    <img src="img/drinks1.jpg" alt="Pinehill Juices">
+                    <h2>Box Juices</h2>
+                    <p>Refreshing juices made from fresh fruits, perfect for a healthy boost.</p>
+                </button>
+
+                <button class="menu-item"
+                    onclick="openModal('Smoothies', 'Blended with fresh fruits and yogurt, a delicious and nutritious treat.', 'img/drinks3.jpg')">
+                    <img src="img/drinks3.jpg" alt="Smoothies">
+                    <h2>Smoothies</h2>
+                    <p>Blended with fresh fruits and yogurt.</p>
+                </button>
+                <button class="menu-item"
+                    onclick="openModal('Milk', 'Fresh milk from local farms, rich in calcium and essential nutrients.', 'img/drinks4.jpg')">
+                    <img src="img/drinks4.jpg" alt="Milk">
+                    <h2>Milk</h2>
+                    <p>Fresh milk from local farms along with cookies.</p>
+                </button>
+            </div>
+            <hr><br>
+            <a href="reserve.html" class="fancy-link" style="font-size: 17px; text-transform: uppercase;">Make a
+                reservation Here</a></p>
+
+        </div>
+        <div class="footer">
+            <h1 class="footHead"><i>D-Chops</i></h1>
+            <p>Contact: <a href="mailto:info@d-chops.com">info@d-chops.com</a> | Phone: +1 (246) 456-7890</p>
+            <hr>
+            <p>&copy; 2024 D-Chops Restaurant. All rights reserved.</p>
+            <p><i>Website by: Deron Barker</i></p>
+        </div>
+    </div>
+    <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">Top</button>
+
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <button class="close" aria-label="Close modal" onClick="closeModal()">
+                &times;
+            </button>
+            <img id="modalImage" src="" alt="Dish">
+            <h2 id="modalTitle">Modal Title</h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+    <script>
+        // Scroll to the Top Button
+        let mybutton = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        function clearSearch() {
+            document.getElementById("searchInput").value = '';
+            filterMenu();
+        }
+
+        function filterMenu() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let menuSections = document.querySelectorAll(".menu-section");
+
+            menuSections.forEach(section => {
+                let sectionTitle = section.querySelector("h1"); // Get the section title
+                let menuItems = section.querySelectorAll(".menu-item");
+                let foundInSection = false;
+
+                menuItems.forEach(item => {
+                    let itemName = item.querySelector("h2").innerText.toLowerCase();
+                    let itemDescription = item.querySelector("p").innerText.toLowerCase();
+
+                    // Check if either item name or description contains the input
+                    if (itemName.includes(input) || itemDescription.includes(input) || sectionTitle.innerText.toLowerCase().includes(input)) {
+                        item.style.display = "block";
+                        foundInSection = true;
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+
+                // Show or hide the section based on whether items were found
+                if (foundInSection) {
+                    section.style.display = "flex";
+                    sectionTitle.style.display = "block";
+                } else {
+                    section.style.display = "none";
+                    sectionTitle.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Chops</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/d2.png" type="image/x-icon">
+    <style>
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .about-container {
+            text-align: center;
+            animation: fadeInUp 1s ease;
+            padding: 20px;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-container h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .about-container p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .about-container img {
+            width: 200px;
+            margin-top: 20px;
+            border-radius: 10px;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .content img {
+            max-width: 50%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        /* Scroll to the top Button CSS */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: transparent;
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: beige;
+            color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <h1 class="footHead" style="float: left;"><a href="resturant.html"><i>D-Chops <img src="img/axe.png" height="18px"
+                    alt="An Axe"></i></a></h1>
+                <ul>
+                    <li><a href="aboutus.html" title="About Us">About Us</a></li>
+                    <li><a href="reserve.html" title="Make a Reservation">Reservation</a></li>
+                    <li><a href="menu.html" title="Menu">Menu</a></li>
+                    <li><a href="resturant.html" title="Home Page">Home</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="content">
+                <div class="main-head">
+                    <h1 style="text-align: center; margin-right: 22px; text-transform: uppercase;"><strong>Map</strong></h1>
+                </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62175.443637856966!2d-59.63779338835549!3d13.101389428983737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c43f6c2fa4cf93d%3A0x7dc1e66a95867069!2sBridgetown%2C%20Saint%20Michael%20Barbados!5e0!3m2!1sen!2s!4v1721260246429!5m2!1sen!2s"
+                width="700" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Map of Bridgetown, Saint Michael, Barbados"></iframe>
+                <h1>Come Visit Us!</h1>
+
+        </div>
+        <div class="footer">
+            <h1 class="footHead"><i>D-Chops</i></h1>
+            <p>Contact: <a href="mailto:info@d-chops.com">info@d-chops.com</a> | Phone: +1 (246) 456-7890</p>
+            <hr>
+            <p>&copy; 2024 D-Chops Restaurant. All rights reserved.</p>
+            <p><i>Website by: Deron Barker</i></p>
+        </div>
+    </div>
+    <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">Top</button>
+
+    <script>
+        // Scroll to the Top Button
+        let mybutton = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

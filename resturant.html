@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Chops</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/d2.png" type="image/x-icon">
+    <style>
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .about-container {
+            text-align: center;
+            animation: fadeInUp 1s ease;
+            padding: 20px;
+        }
+
+        .about-container img {
+            width: 200px;
+            margin-top: 20px;
+            border-radius: 10px;
+            animation: rotate 4s linear infinite;
+        }
+
+        .content img {
+            max-width: 50%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .centered-content {
+            color: black;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .centered-content h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .centered-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            animation: fadeInUp 2.5s ease;
+        }
+
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: transparent;
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: beige;
+            color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <h1 class="footHead" style="float: left;"><a href="resturant.html"><i>D-Chops <img src="img/axe.png"
+                                height="18px" alt="An Axe"></i></a></h1>
+                <ul>
+                    <li><a href="aboutus.html" title="About Us">About Us</a></li>
+                    <li><a href="reserve.html" title="Make a Reservation">Reservation</a></li>
+                    <li><a href="menu.html" title="Menu">Menu</a></li>
+                    <li><a href="resturant.html" title="Home Page">Home</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="content centered-content">
+            <h2>Welcome to D-Chops <img src="img/axe.png" height="18px" width="18px" alt="An Axe"></h2>
+            <p>Discover the finest dining experience in town at D-Chops, where quality meets taste.</p>
+        </div>
+        <div class="footer">
+            <h1 class="footHead"><i>D-Chops</i></h1>
+            <p>Contact: <a href="mailto:info@d-chops.com">info@d-chops.com</a> | Phone: +1 (246) 456-7890</p>
+            <hr>
+            <p>&copy; 2024 D-Chops Restaurant. All rights reserved.</p>
+            <p><i>Website by: Deron Barker</i></p>
+        </div>
+    </div>
+    <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">Top</button>
+
+    <script>
+        // Scroll to the Top Button
+        let mybutton = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

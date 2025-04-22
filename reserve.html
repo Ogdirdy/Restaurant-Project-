@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Creator" content="co-authored by Deron Barker">
+  <title>D-Chops - Reservation</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/d2.png" type="image/x-icon">
+  <style>
+    /* Form CSS */
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    form label {
+      display: block;
+      color: #333;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form input[type="date"],
+    form textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s ease;
+    }
+
+    form input[type="time"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    form textarea {
+      height: 120px;
+    }
+
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form input[type="tel"]:focus,
+    form input[type="date"]:focus,
+    form input[type="time"]:focus,
+    form textarea:focus {
+      border-color: #659ec7;
+    }
+
+    .inline-fields {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .inline-fields>div,
+    .inline-fields>input,
+    .inline-fields>select {
+      width: 48%;
+    }
+
+    form .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    form input[type="submit"],
+    form input[type="reset"] {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #417cb8;
+    }
+
+    form input[type="reset"]:hover {
+      background-color: red;
+    }
+
+    form input[type="submit"] {
+      margin-right: 10px;
+    }
+
+    form label[for="date"],
+    form label[for="time"],
+    form label[for="message"] {
+      font-weight: bold;
+    }
+
+    .input-field {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-field input {
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      font-size: 16px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: transparent;
+      outline: none;
+    }
+
+    .input-field label {
+      position: absolute;
+      top: 40%;
+      left: 15px;
+      transform: translateY(-50%);
+      font-size: 15px;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    .input-field input:focus~label,
+    .input-field input:not(:placeholder-shown)~label {
+      top: -10px;
+      left: 10px;
+      font-size: 12px;
+      background: #fff;
+      padding: 0 5px;
+      color: #659ec7;
+    }
+
+    input::placeholder {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    input:focus::placeholder {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="header">
+        <h1 class="footHead" style="float: left;"><a href="resturant.html"><i>D-Chops <img src="img/axe.png" height="18px" alt="An Axe"></i></a></h1>
+        <ul>
+          <li><a href="aboutus.html" title="About Us">About Us</a></li>
+          <li><a href="reserve.html" title="Make a Reservation">Reservation</a></li>
+          <li><a href="menu.html" title="Menu">Menu</a></li>
+          <li><a href="resturant.html" title="Home Page">Home</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="content">
+      <!-- Form Start -->
+      <form id="contactForm" action="mailto:dchops@gmail.com" method="post" enctype="text/plain">
+        <div class="form-header">
+          <div class="main-head">
+            <h1 class="form-title" style="color: black; text-transform: uppercase;">Reservation</h1>
+          </div>
+        </div>
+        <div class="input-field">
+          <input type="text" id="name" name="name" required placeholder="Firstname Lastname">
+          <label for="name">Enter Name</label>
+        </div>
+        <div class="input-field">
+          <input type="email" id="email" name="email" placeholder="info@d-chops.com">
+          <label for="email">Enter Email</label>
+        </div>
+
+        <div class="inline-fields">
+          <div class="input-field">
+            <input type="tel" id="tel" name="tel" required placeholder="xxx-xxxx">
+            <label for="tel">Telephone Number</label>
+          </div>
+          <div class="input-field">
+            <input type="tel" id="cell" name="cell" required placeholder="xxx-xxxx">
+            <label for="cell">Cell Number</label>
+          </div>
+        </div>
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time</label>
+        <div class="inline-fields">
+          <input type="time" id="time" name="time" class="time-input" required>
+        </div>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="What is your order?" required></textarea>
+
+        <div class="button-container">
+          <input type="submit" value="Submit">
+          <input type="reset" value="Clear">
+        </div>
+      </form>
+      <!--Scroll to Top Button-->
+      <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">Top</button>
+    </div>
+    <div class="footer">
+      <h1 class="footHead"><i>D-Chops</i></h1>
+      <p>Contact: <a href="mailto:info@d-chops.com">info@d-chops.com</a> | Phone: +1 (246) 456-7890</p>
+      <hr>
+      <p>&copy; 2024 D-Chops Restaurant. All rights reserved.</p>
+      <p><i>Website by: Deron Barker</i></p>
+    </div>
+  </div>
+  <script>
+    // Scroll to the Top Button
+    let mybutton = document.getElementById("scrollToTopBtn");
+
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+
+</html>
